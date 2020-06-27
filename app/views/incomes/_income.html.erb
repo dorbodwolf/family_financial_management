@@ -1,0 +1,14 @@
+<tr>
+  <td><%= income.id %></td>
+  <td><%= income.credit_day %></td>
+  <td><%= income.value %></td>
+  <td><span class="label label-info"><%= income.income_type %></span></td>
+  <td><span class="label label-info"><%= income.subtype %></span></td>
+  <td><%= income.detail %></td>
+  <td><%= income.created_at %></td>
+  <td>
+    <%= link_to "详情", income_path(income), class: "btn btn-info" %>
+    <%= link_to "编辑", edit_income_path(income), class: "btn btn-default" %>
+    <%= link_to "删除", income_path(income), method: :delete, class: "btn btn-danger" %>
+  </td>
+</tr>

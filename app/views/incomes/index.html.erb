@@ -1,0 +1,84 @@
+<%
+=begin%>
+ <div class="total-index-container", style="background-color:AZURE">
+<div class="actions", style="background-color:LIGHTSALMON"> 
+<%
+=end%>
+    <%= link_to "新增收入", new_income_path, class: "btn btn-success pull-right" %>
+    <%= link_to "新增支出", new_expense_path, class: "btn btn-danger pull-right" %>
+<%
+=begin%>
+ </div>  
+</div>   
+<%
+=end%>
+
+<HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
+
+<div class="total-index-container", style="background-color:AZURE">
+  <table class="table">
+      <caption>统计数字</caption>
+      <thead>
+        <tr>
+          <th>历史总存款额（现金）</th>
+          <th>本年活动现金流</th>
+          <th>本月活动现金流</th>
+          <th>本月收入合计</th>
+          <th>本月支出合计</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td> <%= @accessible %> 元 </td>
+        <td> <%= @accessible_year %> 元 </td>
+        <td> <%= @accessible_month %> 元 </td>
+        <td> <%= @total_income_current_month %> 元 </td>
+        <td> <%= @total_expense_current_month %> 元 </td>
+      </tbody>
+  </table>
+</div>  
+
+
+<HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
+
+<div class="incomes-index-container", style="background-color:LAVENDER">
+  <table class="table">
+    <caption>收入报表</caption>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>入账日</th>
+        <th>入账额</th>
+        <th>收入类型</th>
+        <th>收入大类</th>
+        <th>细则</th>
+        <th>首次录入时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @incomes %>
+    </tbody>
+  </table>
+</div>
+
+<HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
+
+
+<div class="expenses-index-container", style="background-color:LAVENDER">
+  <table class="table">
+    <caption>支出报表</caption>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>出账日</th>
+        <th>支出额</th>
+        <th>支出类型</th>
+        <th>支出大类</th>
+        <th>收入细类</th>
+        <th>首次录入时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @expenses %>
+    </tbody>
+  </table>
+</div>

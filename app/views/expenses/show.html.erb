@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">单笔支出详情</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">支出类型：<%= @expense.expense_type %></li>
+      <li class="list-group-item">支出大类：<%= @expense.subtype %></li>
+      <li class="list-group-item">支出细类：<%= @expense.detailtype %></li>
+      <li class="list-group-item">支出额：<%= @expense.value %></li>
+      <li class="list-group-item">出账日：<%= @expense.credit_day %></li>
+      <li class="list-group-item">录入时间：<%= @expense.created_at %></li>
+      <li class="list-group-item">更新时间：<%= @expense.updated_at %></li>
+    </ul>
+  </div>
+  <div class="panel-footer"><%= @expense.created_at %></div>
+</div>
+<%= render "expenses/shared/links" %>

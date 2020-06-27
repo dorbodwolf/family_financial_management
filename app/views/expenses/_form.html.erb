@@ -1,0 +1,47 @@
+<%= form_for @expense do |f| %> 
+
+  <div class="form-group field">
+    <%= f.label :支出类型 %> <br />
+    <%= f.collection_select :expense_type, ExpenseType.order(:expense_type), :expense_type, :expense_type, include_blank: '--请选择--' %>
+  </div> 
+
+  <div class="form-group field", style="display:none;" >
+    <%= f.label :支出大类 %> <br />
+    <%= f.collection_select :subtype, ExpenseSubType.order(:subtype), :subtype, :subtype, html_options = {id: 'subtypes'}, {:id=>'subtypes'}%>
+  </div> 
+
+  <div class="form-group field">
+    <%= f.label :支出大类 %> <br />
+    <%= f.grouped_collection_select :subtype, ExpenseType.order(:expense_type), :expense_sub_type, :expense_type, :subtype, :subtype, options = {include_blank: '--请选择--'} %>
+  </div> 
+
+  <div class="form-group field", style="display:none;">
+    <%= f.label :支出细类 %> <br />
+    <%= f.grouped_collection_select :detailtype, ExpenseSubType.order(:subtype), :expense_leaf_type, :subtype, :leaftype, :leaftype, html_options = {id: 'detailtypes'}, {:id=>'my-custom-class'} %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :支出细类 %> <br />
+    <%= f.grouped_collection_select :detailtype, ExpenseSubType.order(:subtype), :expense_leaf_type, :subtype, :leaftype, :leaftype %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :花费（¥） %>
+    <%= f.number_field :value, class: "form-control" %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :出账日期 %>
+    <%= f.date_field :credit_day, class: "form-control" %>
+  </div>   
+
+  <div class="actions">
+    <%= f.submit "提交", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%
+=begin%>
+ <%= render "incomes/shared/links" %>  
+<%
+=end%>

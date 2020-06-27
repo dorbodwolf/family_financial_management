@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div  class="navbar-header">
-      <a class="navbar-brand" href="/">家庭财务管理系统</a>
+      <a class="navbar-brand" href="/">小田媳妇&小田先生™家庭财务管理系统</a>
     </div>
 
     <!-- Collect the nav links,forms,and other content for toggling -->
@@ -19,8 +19,10 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to("收支记录", accounts_path) %></li>
-              <li><%= link_to("财务统计", statistics_path) %></li>
+              <li><%= link_to("收支报表", incomes_path) %></li>
+              <li><%= link_to("收支图表", statistics_path) %></li>
+              <li><%= link_to("资产负债报表", accounts_path) %></li>
+              <li><%= link_to("资产负债图表", statistics_path) %></li>
               <% if is_admin? %>
                 <li class="divider"></li>
                 <li><%= link_to("财经资讯", posts_path) %></li>

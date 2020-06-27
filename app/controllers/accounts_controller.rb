@@ -43,7 +43,7 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:general_income, :other_income, :general_expenses, :other_expenses, :label, :memo)
+    params.require(:account).permit(:general_income, :other_income)
   end
 
   def find_account

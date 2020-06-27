@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :accounts
+  has_many :incomes
+  has_many :expenses
   has_many :login_logs
   has_many :posts
 

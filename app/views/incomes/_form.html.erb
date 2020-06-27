@@ -1,0 +1,36 @@
+
+<%= form_for @income do |f| %> 
+ <div class="form-group field">
+    <%= f.label :收入类型 %> <br />
+    <%= f.collection_select :income_type, IncomeType.order(:income_type), :income_type, :income_type %>
+  </div> 
+  
+
+  <div class="form-group field">
+    <%= f.label :收入细类 %> <br />
+    <%= f.grouped_collection_select :subtype, IncomeType.order(:income_type), :income_sub_types, :income_type, :subtype, :subtype  %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :入账额 %>
+    <%= f.number_field :value, class: "form-control" %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :细则 %>
+    <%= f.text_field :detail, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group field">
+    <%= f.label :入账日 %>
+    <%= f.date_field :credit_day, class: "form-control" %>
+  </div> 
+
+
+  <div class="actions">
+    <%= f.submit "提交", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= render "incomes/shared/links" %>
