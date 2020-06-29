@@ -27,7 +27,12 @@
 
   <div class="form-group field">
     <%= f.label :花费（¥） %>
-    <%= f.number_field :value, class: "form-control" %>
+    <%= f.number_field :value, class: "form-control", :step => 0.01 %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :细则 %>
+    <%= f.text_field :marks, class: "form-control" %>
   </div>
 
   <div class="form-group field">

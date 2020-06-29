@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
     end
 
     def expense_params
-        params.require(:expense).permit(:expense_type, :subtype, :detailtype, :value, :credit_day)
+        params.require(:expense).permit(:expense_type, :subtype, :detailtype, :value, :marks, :credit_day)
     end  
 
     def find_expense
