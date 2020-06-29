@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :accounts
   resources :incomes
   resources :expenses
+  resources :images
   resources :posts do
     member do
       post :toggle_hidden
