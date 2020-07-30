@@ -1,7 +1,9 @@
-# 家庭财务报表系统文档
+# 家庭财务报表系统
 
-## 开发环境
-克隆项目（---此处项目URL）后在本地配置开发环境如下：
+## 1.本地开发文档
+
+### 开发环境
+在本地配置开发环境如下：
 
 * Ruby version
 
@@ -16,7 +18,7 @@
   ` ➜  family_financial_management git:(master) ✗ bundle install`
 
 
-## 数据结构和逻辑
+### 数据结构和逻辑
 
 * 收入模型
 
@@ -45,7 +47,7 @@
 控制器和视图：
 `➜  family_financial_management git:(master) ✗ rails generate controller Expenses`
 
-## 数据库配置
+### 数据库配置
 
 为了后续在heroku部署生产，开发阶段丢弃sqlite3数据库，改用postgresql数据库
 
@@ -64,7 +66,7 @@
   rails db:migrate
 
 
-## 收入支出类别数据导入（用于创建级联列表）
+### 收入支出类别数据导入（用于创建级联列表）
 
 收入类型数据表构建：
 ```
@@ -123,6 +125,10 @@ VALUES ('其它收入', 5);
 支出类、亚类、子类数据表创建：
 
 
-## heroku部署
+## 2.heroku部署文档
 
-## 敏捷更新应用
+## 3.更新日志
+* 2020年7月30日
+修改每月1日0时的账单数据被归类到上月的问题；
+
+* 
