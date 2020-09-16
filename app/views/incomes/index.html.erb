@@ -6,6 +6,7 @@
 =end%>
     <%= link_to "新增收入", new_income_path, class: "btn btn-success pull-right" %>
     <%= link_to "新增支出", new_expense_path, class: "btn btn-danger pull-right" %>
+
 <%
 =begin%>
  </div>  
@@ -37,6 +38,20 @@
   </table>
 </div>  
 
+<%
+=begin%>
+支出筛选  
+<%
+=end%>
+<div class="pull-right range-query">
+  <%= form_tag incomes_path, method: :get do %>
+    <%= label_tag '支出筛选：' %>
+    <%= date_field_tag 'search[date_from]', @search.default_date_from %>
+    <%= date_field_tag 'search[date_to]', @search.default_date_to %>
+    <%= text_field_tag 'search[type]' %>
+    <%= submit_tag 'Go', class: 'btn search-button' %>
+  <% end %>
+</div>
 
 <HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
 
@@ -77,7 +92,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @expenses %>
+      <%= render @selected_expenses %>
     </tbody>
   </table>
 </div>
