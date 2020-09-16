@@ -131,6 +131,25 @@ VALUES ('其它收入', 5);
 查看路由列表：`rake routes`，可以看到路由动作对应的控制器action，如`incomes/GET`路由对应`incomes#index`action  
 
 ## 2.heroku部署文档
+以下内容为敏捷开发版本迭代过程使用。  
+### Install the Heroku CLI
+Download and install the Heroku CLI.
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.  
+
+`$ heroku login`
+
+### Clone the repository
+Use Git to clone wife-of-little-tian's source code to your local machine.  
+
+`$ heroku git:clone -a wife-of-little-tian`
+`$ cd wife-of-little-tian`
+### Deploy your changes
+Make some changes to the code you just cloned and deploy them to Heroku using Git.  
+
+`$ git add .`
+`$ git commit -am "make it better"`
+`$ git push heroku master`
 
 ## 3.更新计划
 * 2020年6月29日  
